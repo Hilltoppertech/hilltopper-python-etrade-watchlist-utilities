@@ -24,17 +24,17 @@ Overview of the entire workflow:
 
 Python script usage:
 - Command line: <this python scriptname> <arg#1 name> <arg#1 value> <arg#2 name> <arg#2 value> <arg#3 name> <arg#3 value> ...
-   - Arg #1: --arg_str_inputdirpath "<dir path w/ surrounding double quotes and w/ double forward slashes in the path>"
-    - Description: required input directory path name string for accessing the set of input csv files. Type=string, case sensitive.
-    - Example:  <this python scriptname> --arg_str_inputdirpath  "C://Downloads//Financial//Etrade//PortfolioDownloads//20160703"
-   - Arg #2: --arg_int_writenumberoftickersperrow 10
-    - Description: required integer/number of tickers to be writen per output csv file line before a newline is written. Type=integer,{1-200}.
-    - Example:  <this python scriptname> <arg#1 name> <arg#1 value> --arg_int_writenumberoftickersperrow 10
-   - Arg #3: --arg_str_output_enable_filename_datestamping True
-    - Description: required {True, False} string to specify if the output filename should include a current date YYYYMMDD timestamp. Type=string,{True,False}, case insensitive.
+    - Arg #1: --arg_str_inputdirpath "<dir path w/ surrounding double quotes and w/ double forward slashes in the path>"
+        - Description: required input directory path name string for accessing the set of input csv files. Type=string, case sensitive.
+        - Example:  <this python scriptname> --arg_str_inputdirpath  "C://Downloads//Financial//Etrade//PortfolioDownloads//20160703"
+    - Arg #2: --arg_int_writenumberoftickersperrow 10
+        - Description: required integer/number of tickers to be writen per output csv file line before a newline is written. Type=integer,{1-200}.
+        - Example:  <this python scriptname> <arg#1 name> <arg#1 value> --arg_int_writenumberoftickersperrow 10
+    - Arg #3: --arg_str_output_enable_filename_datestamping True
+        - Description: required {True, False} string to specify if the output filename should include a current date YYYYMMDD timestamp. Type=string,{True,False}, case insensitive.
         - If the input filename DOES included a YYYYMMDD datestamp, then that value will be replaced w/ the current YYYYMMDD datestamp.
         - If the input filename DOES NOT include a YYYYMMDD datestamp, then the current YYYYMMDD datestamp will be added before the '.csv' in the filename.
-    - Example:  <this python scriptname> <arg#1 name> <arg#1 value> <arg#2 name> <arg#2 value> --arg_str_output_enable_filename_datestamping True
+        - Example:  <this python scriptname> <arg#1 name> <arg#1 value> <arg#2 name> <arg#2 value> --arg_str_output_enable_filename_datestamping True
 
 Python script design:
 - For each downloaded Etrade watchlist .csv file in the user provided input directory:
@@ -58,15 +58,15 @@ Python script design:
 Python script design notes:
     - 'Output filename datestamping' functionality:
         - The objective is to create an output filename that can be copied/used as the new watchlist name in Etrade.
-          Optionally, in Etrade one can manually update the input/old watchlist content to match the output/new watchlist content.
+            Optionally, in Etrade one can manually update the input/old watchlist content to match the output/new watchlist content.
         - When enabled, there are 2 scenarios:
             1) The input filename's YYYYMMDD datestamp is replaced:
-              If the input/downloaded csv filename includes a YYYYMMDD datestamp, then the old datestamp will be replaced with the new current datestamp.
-              E.g.:
+            If the input/downloaded csv filename includes a YYYYMMDD datestamp, then the old datestamp will be replaced with the new current datestamp.
+                E.g.:
                 Input/old watchlist & filename:   'Vanguard 20160128' 'Vanguard 20160128.csv'
                 Output/new watchlist & filename:  'Vanguard 20170103' 'Vanguard 20170103.csv.txt'
             2) If the input filename does not include a YYYYMMDD datestamp, then the output filename will be the same as the input filename with both 1) the new current datestamp inserted before '.csv' and 2) '.txt. appended
-              E.g.:
+                E.g.:
                 Input/old watchlist & filename:  'Vanguard 20160128' 'Vanguard 20160128.csv'
                 Output/new watchlist & filename: 'Vanguard 20160128' 'Vanguard 20160128.csv.txt'
         - When disabled:
@@ -74,7 +74,7 @@ Python script design notes:
     - Input file filename & format requirements:
         1) Format requirements:
             - In Etrade, when downloading the original/input Etrade csv watchlist, specify a view such as 'Summary - Market View' that will print the ticker symbols in the 1st column of the .csv file
-              E.g.: sample input file content...
+                E.g.: sample input file content...
                 Watch List Name
                 Vanguard 20160128
                 View Summary - Market View
