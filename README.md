@@ -58,7 +58,6 @@
 **Python script design notes:**
 - 'Output filename datestamping' functionality:
     - The objective is to create an output filename that can be copied/used as the new watchlist name in Etrade.
-        Optionally, in Etrade one can manually update the input/old watchlist content to match the output/new watchlist content.
         - When enabled, there are 2 scenarios:
             - The input filename's YYYYMMDD datestamp is replaced:
                 - If the input/downloaded csv filename includes a YYYYMMDD datestamp, then the old datestamp will be replaced with the new current datestamp.
@@ -70,7 +69,7 @@
                 - Input/old watchlist & filename:  'Vanguard 20160128' 'Vanguard 20160128.csv'
                 - Output/new watchlist & filename: 'Vanguard 20160128' 'Vanguard 20160128.csv.txt'
         - When disabled:
-            - The output filename will be the same as the input filename with '.txt. appended
+            - The output filename will be the same as the input filename with '.txt' appended
 - Input file filename & format requirements:
     - Format requirements:
         - In Etrade, when downloading the original/input Etrade csv watchlist, specify a view such as 'Summary - Market View' that will print the ticker symbols in the 1st column of the .csv file
