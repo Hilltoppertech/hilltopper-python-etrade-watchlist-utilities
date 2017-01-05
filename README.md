@@ -59,18 +59,18 @@ Python script design notes:
     - 'Output filename datestamping' functionality:
         - The objective is to create an output filename that can be copied/used as the new watchlist name in Etrade.
             Optionally, in Etrade one can manually update the input/old watchlist content to match the output/new watchlist content.
-        - When enabled, there are 2 scenarios:
-            1) The input filename's YYYYMMDD datestamp is replaced:
-            If the input/downloaded csv filename includes a YYYYMMDD datestamp, then the old datestamp will be replaced with the new current datestamp.
-                E.g.:
-                Input/old watchlist & filename:   'Vanguard 20160128' 'Vanguard 20160128.csv'
-                Output/new watchlist & filename:  'Vanguard 20170103' 'Vanguard 20170103.csv.txt'
-            2) If the input filename does not include a YYYYMMDD datestamp, then the output filename will be the same as the input filename with both 1) the new current datestamp inserted before '.csv' and 2) '.txt. appended
-                E.g.:
-                Input/old watchlist & filename:  'Vanguard 20160128' 'Vanguard 20160128.csv'
-                Output/new watchlist & filename: 'Vanguard 20160128' 'Vanguard 20160128.csv.txt'
-        - When disabled:
-            - The output filename will be the same as the input filename with '.txt. appended
+            - When enabled, there are 2 scenarios:
+                1) The input filename's YYYYMMDD datestamp is replaced:
+                    If the input/downloaded csv filename includes a YYYYMMDD datestamp, then the old datestamp will be replaced with the new current datestamp.
+                    E.g.:
+                    Input/old watchlist & filename:   'Vanguard 20160128' 'Vanguard 20160128.csv'
+                    Output/new watchlist & filename:  'Vanguard 20170103' 'Vanguard 20170103.csv.txt'
+                2) If the input filename does not include a YYYYMMDD datestamp, then the output filename will be the same as the input filename with both 1) the new current datestamp inserted before '.csv' and 2) '.txt. appended
+                   E.g.:
+                   Input/old watchlist & filename:  'Vanguard 20160128' 'Vanguard 20160128.csv'
+                   Output/new watchlist & filename: 'Vanguard 20160128' 'Vanguard 20160128.csv.txt'
+            - When disabled:
+                - The output filename will be the same as the input filename with '.txt. appended
     - Input file filename & format requirements:
         1) Format requirements:
             - In Etrade, when downloading the original/input Etrade csv watchlist, specify a view such as 'Summary - Market View' that will print the ticker symbols in the 1st column of the .csv file
