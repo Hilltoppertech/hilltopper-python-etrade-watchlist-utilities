@@ -1,7 +1,7 @@
-# hilltopper-python-etrade
+# hilltopper-python-etrade-watchlist-utilities
 
 **Description:**
-- What does this python script do?:
+- What does this project's python script do?:
     - This python script supports step #2 of the workflow described below to be used to create a new watchlist in Etrade based upon an old downloaded watchlist.
     - This python script reformats the old watchlist so that the output can be used to create a new watchlist with the same stock symbol tickers in Etrade.
 - When to use this workflow:
