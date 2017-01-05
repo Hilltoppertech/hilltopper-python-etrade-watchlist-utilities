@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/hilltopper-python-etrade.iml" filepath="$PROJECT_DIR$/.idea/hilltopper-python-etrade.iml" />
+      <module fileurl="file://C:/Downloads/workspacePython/hilltopper-python-etrade-watchlist-utilities/.idea/hilltopper-python-etrade-watchlist-utilities.iml" filepath="C:/Downloads/workspacePython/hilltopper-python-etrade-watchlist-utilities/.idea/hilltopper-python-etrade-watchlist-utilities.iml" />
     </modules>
   </component>
 </project>
