@@ -1,13 +1,13 @@
 # hilltopper-python-etrade
 
-Description:
+**Description:**
 - What does this python script do?:
     - This python script supports step #2 of the workflow described below to be used to create a new watchlist in Etrade based upon an old downloaded watchlist.
     - This python script reformats the old watchlist so that the output can be used to create a new watchlist with the same stock symbol tickers in Etrade.
 - When to use this workflow:
     - When the Etrade account holder wants to create a new watchlist in order to evaluate the performance of an existing watchlist's stocks starting with the current date
 
-Overview of the entire workflow:
+**Overview of the entire workflow:**
 - Perform these steps in order to create a new watchlist in Etrade based upon an old downloaded watchlist:
     - Step #1: (a manual process)
         - The Etrade account holder manually downloads 1 or more existing Etrade .csv watchlists into a single directory to be used as input to this python script
@@ -22,7 +22,7 @@ Overview of the entire workflow:
             - Utilize Etrade's 'pre-fill w/ default values' functionality to populate the purchase price as the current day's price
             - Save the new watchlist
 
-Python script usage:
+**Python script usage:**
 - Command line: <this python scriptname> <arg#1 name> <arg#1 value> <arg#2 name> <arg#2 value> <arg#3 name> <arg#3 value> ...
     - Arg #1: --arg_str_inputdirpath "<dir path w/ surrounding double quotes and w/ double forward slashes in the path>"
         - Description: required input directory path name string for accessing the set of input csv files. Type=string, case sensitive.
@@ -36,7 +36,7 @@ Python script usage:
         - If the input filename DOES NOT include a YYYYMMDD datestamp, then the current YYYYMMDD datestamp will be added before the '.csv' in the filename.
         - Example:  <this python scriptname> <arg#1 name> <arg#1 value> <arg#2 name> <arg#2 value> --arg_str_output_enable_filename_datestamping True
 
-Python script design:
+**Python script design:**
 - For each downloaded Etrade watchlist .csv file in the user provided input directory:
   - Step 1, input files:
     - Refer to the design notes for the input file filename & format requirements.
@@ -55,7 +55,7 @@ Python script design:
        - The output filename will always have the '.txt. suffix appended
        - Refer to the design notes for optional 'output filename datestamp' processing that can create an output filename based upon the input filename that WILL include the current date as YYYYMMDD.
 
-Python script design notes:
+**Python script design notes:**
 - 'Output filename datestamping' functionality:
     - The objective is to create an output filename that can be copied/used as the new watchlist name in Etrade.
         Optionally, in Etrade one can manually update the input/old watchlist content to match the output/new watchlist content.
