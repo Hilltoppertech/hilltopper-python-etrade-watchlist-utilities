@@ -255,16 +255,21 @@ def input_parsetickers():
     print('Step 2a, parsing for stock symbol tickers in column 1...')
     ticker_list = []
     ticker_rows_read_start = False
+    ticker_totalnum_symbolrows_read_aftersymboltoken = 0
     for input_file_row in input_file_row_list:
         # Ticker lines: check if we read the last ticker line, i.e. we are done reading
-        if ((ticker_rows_read_start) & (("generated" in input_file_row.lower()) or (len(input_file_row) == 0))):
+        if ((ticker_rows_read_start) & ("generated" in input_file_row.lower())):
             ticker_rows_read_start = False
-        # Ticker lines: read a ticker line's symbol, store in the ticker_list list
-        if (ticker_rows_read_start):
-            ticker_list.append(input_file_row)
-        # Ticker lines: check if we are at the line before the first ticker?
-        if (input_file_row.lower() == "symbol"):
+        # Ticker lines: check if we are at the line before the first ticker via the token "symbol"?
+        if ("symbol" in input_file_row.lower()):
             ticker_rows_read_start = True
+        # Ticker lines: allow 1 blank line after reading the token "symbol"
+        elif ((len(input_file_row) == 0)) & (ticker_totalnum_symbolrows_read_aftersymboltoken == 0):
+            pass
+        # Ticker lines: read a ticker line's symbol, store in the ticker_list list
+        elif (ticker_rows_read_start):
+            ticker_list.append(input_file_row)
+            ticker_totalnum_symbolrows_read_aftersymboltoken += 1
 
     if (len(ticker_list) == 0):
         print(
