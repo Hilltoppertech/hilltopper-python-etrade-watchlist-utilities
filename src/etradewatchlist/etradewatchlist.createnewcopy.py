@@ -260,13 +260,13 @@ def input_parsetickers():
         # Ticker lines: check if we read the last ticker line, i.e. we are done reading
         if ((ticker_rows_read_start) & ("generated" in input_file_row.lower())):
             ticker_rows_read_start = False
-        # Ticker lines: check if we are at the line before the first ticker via the token "symbol"?
+        # 20171008: Ticker lines: check if we are at the line before the first ticker via the token "symbol"?
         if ("symbol" in input_file_row.lower()):
             ticker_rows_read_start = True
-        # Ticker lines: allow 1 blank line after reading the token "symbol"
+        # 20171008: Ticker lines: allow 1 blank line after reading the token "symbol"
         elif ((len(input_file_row) == 0)) & (ticker_totalnum_symbolrows_read_aftersymboltoken == 0):
             pass
-        # Ticker lines: read a ticker line's symbol, store in the ticker_list list
+        # 20171008: Ticker lines: read a ticker line's symbol, store in the ticker_list list
         elif (ticker_rows_read_start):
             ticker_list.append(input_file_row)
             ticker_totalnum_symbolrows_read_aftersymboltoken += 1
